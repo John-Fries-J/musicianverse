@@ -21,6 +21,13 @@ for (const folder of commandFolders) {
 	}
 }
 
+client.on('guildMemberAdd', member => {
+    const channelId = '1067134590893949039';
+    const channel = member.guild.channels.cache.get(channelId);
+    if (!channel) return console.log('No join leave channel detected');
+    channel.send(`Welcome to the server, ${member}!`);
+});
+
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
