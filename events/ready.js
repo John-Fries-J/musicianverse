@@ -1,4 +1,4 @@
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, ActivityType } = require('discord.js');
 const { statusName } = require('../config.json');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
         console.log(`Ready! Logged in as ${client.user.tag}`);
         if (!statusName) return console.log('No status name provided in config.json')
         else {
-        client.user.setPresence({ activities: [{ name: `${statusName}` }] });
+        client.user.setPresence({ activities: [{ name: `${statusName}`, type: ActivityType.Listening }] });
     }
     },
 };
