@@ -31,6 +31,7 @@ client.on('guildMemberAdd', member => {
 	.setDescription(`To get started follow these steps:\n- Have a read of <#1067046161380282388> and <#1067082006141358140>.\n- Customise your profile with roles in <#1067084911917420544>.\n- Introduce yourself in <#1067059509752766535>.`)
 	.setColor(purple);
     channel.send({content: `Hey ${member}!`, embeds: [welcomeEmbed] });
+	member.send({ embeds: [welcomeEmbed] });
 });
 
 const eventsPath = path.join(__dirname, 'events');
